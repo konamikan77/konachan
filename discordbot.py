@@ -8,7 +8,7 @@ from common import consts
 from common import operate_settings
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = 'MTIyNjQxODIyNjkxMzg3Mzk5MA.GojjG3.msNrtOvOblQUTZIIyUGPAXYkpbGdrHwDCe1--g'
+TOKEN = ''
 
 # 接続に必要なオブジェクトを生成
 intents = discord.Intents.all()
