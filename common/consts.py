@@ -2,7 +2,7 @@
 # 環境定数
 ###################
 # botトークン
-TOKEN = "MTIyNjQxODIyNjkxMzg3Mzk5MA.GojjG3.msNrtOvOblQUTZIIyUGPAXYkpbGdrHwDCe1--g"
+TOKEN = "[トークンを入力]"
 # サーバー設定ディレクトリ
 SETTING_DIR = "./export/settings/"
 # サーバー設定ファイル
