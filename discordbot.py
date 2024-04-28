@@ -8,7 +8,7 @@ from common import consts
 from common import operate_settings
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = ''
+TOKEN = consts.TOKEN
 
 # 接続に必要なオブジェクトを生成
 intents = discord.Intents.all()
@@ -23,14 +23,14 @@ async def send_message_every_10sec():
     # 現在時刻取得
     dt_now = datetime.datetime.now()
     print(dt_now)
-    guild = client.get_guild(1209326912594247721)
+    guild = client.get_guild(999697865137983602)
     # 毎時00分処理
-    #if re.match(consts.PATTERN_HOUR, str(dt_now)):
-    # # 死活監視メッセージ
-   # await guild.get_channel(1230903380705021973).send("-----こ、こんにちは" +str(dt_now) + "-----")
+    if re.match(consts.PATTERN_HOUR, str(dt_now)):
+     # # 死活監視メッセージ
+     await guild.get_channel(1230903380705021973).send("-----こ、こんにちは" +str(dt_now) + "-----")
    # 毎時50分処理
     if re.match(consts.PATTERN_50_MINUITE, str(dt_now)):
-        targets = operate_settings.get_cat_targets()
+        targets = operate_settings.get_reminder_finish_targets()
         print(targets)
         for target in targets:
             c_guild = client.get_guild(target["server_id"])
@@ -132,16 +132,16 @@ async def on_message(message):
         await message.channel.send('; 初期化おわり')
         return
     # 炊きリマインダー開始
-    if re.match(consts.PATTERN_CAT_START, message.content):
+    if re.match(consts.PATTERN_REMINDER_CHARGE_START, message.content):
         # args = message.content.split()
         # reminer_message = args[3] if len(args) > 3 else ""
-        operate_settings.start_cat(message.guild.id, message.channel.id)
+        operate_settings.start_reminder_charge(message.guild.id, message.channel.id, consts.DEFAULT_REMINDER_CHARGE_MESSAGE)
         await message.channel.send('; 炊いてリマインドはじめ')
         return
-    if re.match(consts.PATTERN_CAT_END, message.content):
+    if re.match(consts.PATTERN_REMINDER_CHARGE_END, message.content):
         # args = message.content.split()
         # reminer_message = args[3] if len(args) > 3 else ""
-        operate_settings.end_cat(message.guild.id)
+        operate_settings.end_reminder_charge(message.guild.id)
         await message.channel.send('; 炊いてリマインド終了')
         return
             # シフト交代リマインダー開始
