@@ -4,11 +4,12 @@ import re
 import datetime
 import asyncio
 from discord.ext import tasks
+from common import env
 from common import consts
 from common import operate_settings
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = consts.TOKEN
+TOKEN = env.TOKEN
 
 # 接続に必要なオブジェクトを生成
 intents = discord.Intents.all()

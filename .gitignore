@@ -16,3 +16,5 @@ docs/crowdin.py
 *.mo
 /.coverage
 build/*
+common/env.py
+**/__pycache__/**
