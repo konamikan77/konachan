@@ -2,7 +2,7 @@ class Setting:
     def __init__(self, server_id='',
             change_room_number_enable=False, change_room_number_id='', change_room_number_now = '',
             afterlive_room_number_enable=False, afterlive_room_number_id='', afterlive_room_number_now = '',
-            cat_enable=False, cat_id='',
+            event_track_enable=False, event_track_id='',
             reminder_finish_enable = False, reminder_finish_id = '', reminder_finish_message = '',
             reminder_announce_enable = False, reminder_announce_id = '', reminder_announce_message = '',
             reminder_charge_enable = False, reminder_charge_id = '', reminder_charge_message = '',
@@ -14,8 +14,8 @@ class Setting:
         self.afterlive_room_number_enable = afterlive_room_number_enable
         self.afterlive_room_number_id = afterlive_room_number_id
         self.afterlive_room_number_now = afterlive_room_number_now
-        self.cat_enable = cat_enable
-        self.cat_id = cat_id
+        self.event_track_enable = event_track_enable
+        self.event_track_id = event_track_id
         self.reminder_finish_enable = reminder_finish_enable
         self.reminder_finish_id = reminder_finish_id
         self.reminder_finish_message = reminder_finish_message

@@ -11,22 +11,22 @@ def init_settings(server_id):
     utils.write_file(consts.SETTING_FILE.format(server_id), y)
 
 """ 時速取得設定開始 """
-def start_cat(server_id, channel_id):
-    change_cat(server_id, channel_id, True)
+def start_event_track(server_id, channel_id):
+    change_event_track(server_id, channel_id, True)
 
 """ 時速取得設定終了 """
-def end_cat(server_id):
-    change_cat(server_id, "", False)
+def end_event_track(server_id):
+    change_event_track(server_id, "", False)
 
     """ 時速取得設定変更 """
-def change_cat(server_id, channel_id, cat_enable):
+def change_event_track(server_id, channel_id, event_track_enable):
     is_file = os.path.isfile(consts.SETTING_FILE.format(server_id))
     if not is_file:
         init_settings(server_id)
     setting_json = utils.read_file(consts.SETTING_FILE.format(server_id))
     setting = json.loads(setting_json)
-    setting["cat_enable"] = cat_enable
-    setting["cat_id"] = channel_id
+    setting["event_track_enable"] = event_track_enable
+    setting["event_track_id"] = channel_id
     utils.write_file(consts.SETTING_FILE.format(server_id), json.dumps(setting, indent=2))
 
 
@@ -127,7 +127,7 @@ def change_afterlive_room_number_now(server_id, room_number):
     setting["afterlive_room_number_now"] = room_number
     utils.write_file(consts.SETTING_FILE.format(server_id), json.dumps(setting, indent=2))
 
-def get_cat_targets():
+def get_event_track_targets():
     files = glob.glob(consts.SETTINGS)
     targets = []
     for file in files:
@@ -135,7 +135,7 @@ def get_cat_targets():
         data_json = f.read()
         f.close()
         data = json.loads(data_json)
-        if data["cat_enable"]:
+        if data["event_track_enable"]:
             targets.append(data)
     return targets
 
