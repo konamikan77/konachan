@@ -1,0 +1,8 @@
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[user]
+	name = konamikan77
+	email = mikan.20.0420@gmail.com

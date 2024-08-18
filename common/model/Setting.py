@@ -1,3 +1,7 @@
+# ver1.1.2.1　こいしたいむ実装・軽微な修正
+# 対応ver
+# consts.py：1.1.4.1以降　discordbot.py：1.1.6.1以降　operate_setting：1.1.2.1以降　utils：1.0.0以降
+
 class Setting:
     def __init__(self, server_id='',
             change_room_number_enable=False, change_room_number_id='', change_room_number_now = '',
@@ -6,7 +10,11 @@ class Setting:
             reminder_finish_enable = False, reminder_finish_id = '', reminder_finish_message = '',
             reminder_announce_enable = False, reminder_announce_id = '', reminder_announce_message = '',
             reminder_charge_enable = False, reminder_charge_id = '', reminder_charge_message = '',
-            reminder_bug_enable = False, reminder_bug_id = '', reminder_bug_message = ''):
+            reminder_bug_enable = False, reminder_bug_id = '', reminder_bug_message = '',
+            kohane_time_enable = False, kohane_time_id = '', kohane_time_message = '',
+            nene_time_enable = False, nene_time_id = '', nene_time_message = '',
+            minori_time_enable = False, minori_time_id = '', minori_time_message = '',
+            koishi_time_enable = False, koishi_time_id = '', koishi_time_message = ''):
         self.server_id = server_id
         self.change_room_number_enable = change_room_number_enable
         self.change_room_number_id = change_room_number_id
@@ -28,5 +36,18 @@ class Setting:
         self.reminder_bug_enable = reminder_bug_enable
         self.reminder_bug_id = reminder_bug_id
         self.reminder_bug_message = reminder_bug_message
+        self.kohane_time_enable = kohane_time_enable
+        self.kohane_time_id = kohane_time_id
+        self.kohane_time_message = kohane_time_message
+        self.nene_time_enable = nene_time_enable
+        self.nene_time_id = nene_time_id
+        self.nene_time_message = nene_time_message
+        self.minori_time_enable = minori_time_enable
+        self.minori_time_id = minori_time_id
+        self.minori_time_message = minori_time_message
+        self.koishi_time_enable = koishi_time_enable
+        self.koishi_time_id = koishi_time_id
+        self.koushi_time_message = koishi_time_message
+
     
        
